@@ -1,0 +1,47 @@
+name: Resume Pipeline
+
+on:
+  push:
+    paths:
+      - 'content/resume.yml'
+      - 'src/**'
+      - 'scripts/**'
+      - 'astro.config.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/resume.yml'
+  workflow_dispatch:
+
+jobs:
+  resume:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Validate resume content
+        run: npm run validate:resume
+
+      - name: Build site
+        run: npm run build
+
+      - name: Generate PDF
+        run: npm run generate:pdf
+
+      - name: Upload resume PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdf
+          path: resume.pdf

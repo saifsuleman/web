@@ -1,0 +1,32 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "validate:resume": "tsx scripts/validate-resume.ts",
+    "generate:pdf": "tsx scripts/generate-pdf.ts",
+    "build:resume": "npm run validate:resume && npm run build && npm run generate:pdf"
+  },
+  "dependencies": {
+    "@astrojs/react": "^5.0.7",
+    "astro": "^6.4.7",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "yaml": "^2.8.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@playwright/test": "^1.53.0",
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}

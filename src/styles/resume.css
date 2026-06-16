@@ -1,0 +1,126 @@
+:root {
+  color-scheme: light;
+  --text: #1f2933;
+  --muted: #52606d;
+  --bg: #ffffff;
+  --border: #d9e2ec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: #f8fafc;
+}
+
+.page-shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.resume {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 2rem;
+}
+
+.resume-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.role {
+  margin: 0.25rem 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.meta,
+.entry-meta {
+  color: var(--muted);
+}
+
+h2 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.25rem;
+  margin-top: 1.6rem;
+}
+
+.resume-entry {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.inline-links {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+a {
+  color: #0b69a3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .resume {
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+  }
+
+  .resume-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  body {
+    background: #fff;
+    font-size: 11pt;
+  }
+
+  .page-shell {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  ul,
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

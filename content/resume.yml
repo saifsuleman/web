@@ -1,0 +1,49 @@
+profile:
+  name: "Saif Suleman"
+  title: "Full-Stack Engineer"
+  location: "Karachi, Pakistan"
+  email: "saif@example.com"
+  phone: "+92 300 0000000"
+summary: "Product-focused engineer with experience building reliable web platforms, developer tooling, and scalable APIs."
+experience:
+  - company: "Example Labs"
+    role: "Senior Software Engineer"
+    location: "Remote"
+    startDate: "2022-01"
+    endDate: "Present"
+    highlights:
+      - "Led migration to type-safe service contracts and reduced production incidents."
+      - "Built internal tooling to automate release checks across services."
+  - company: "Acme Digital"
+    role: "Software Engineer"
+    location: "Karachi, Pakistan"
+    startDate: "2019-06"
+    endDate: "2021-12"
+    highlights:
+      - "Implemented customer-facing dashboard flows in React and TypeScript."
+      - "Partnered with design and product to improve conversion on key pages."
+education:
+  - institution: "NED University"
+    degree: "B.E. in Computer Systems Engineering"
+    startDate: "2015"
+    endDate: "2019"
+projects:
+  - name: "Resume Platform"
+    description: "Single-source resume website and PDF pipeline using Astro and Playwright."
+    links:
+      - label: "Repository"
+        url: "https://github.com/saifsuleman/web"
+skills:
+  - category: "Languages"
+    items: ["TypeScript", "JavaScript", "SQL"]
+  - category: "Frameworks"
+    items: ["React", "Astro", "Node.js"]
+certifications:
+  - name: "AWS Certified Cloud Practitioner"
+    issuer: "Amazon Web Services"
+    year: "2024"
+links:
+  - label: "GitHub"
+    url: "https://github.com/saifsuleman"
+  - label: "LinkedIn"
+    url: "https://linkedin.com/in/saifsuleman"
