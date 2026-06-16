@@ -59,12 +59,13 @@ async function main(): Promise<void> {
     const browser = await chromium.launch();
     const page = await browser.newPage();
     await page.goto(targetUrl, { waitUntil: 'networkidle' });
+    await page.waitForSelector('.resume');
     await page.evaluate(async () => {
       if ('fonts' in document) {
         await document.fonts.ready;
       }
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     });
-    await page.waitForTimeout(500);
 
     await page.pdf({
       path: outputPath,
@@ -72,10 +73,10 @@ async function main(): Promise<void> {
       preferCSSPageSize: true,
       format,
       margin: {
-        top: '10mm',
-        bottom: '10mm',
-        left: '10mm',
-        right: '10mm'
+        top: '12mm',
+        bottom: '12mm',
+        left: '12mm',
+        right: '12mm'
       }
     });
 
