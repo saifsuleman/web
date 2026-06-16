@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Resume from '../components/Resume';
+import { loadResume } from '../lib/loadResume';
+import '../styles/resume.css';
+
+const resume = loadResume();
+const title = `${resume.profile.name} — Resume`;
+const description = resume.summary;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="page-shell">
+    <Resume content={resume} />
+  </div>
+</BaseLayout>
